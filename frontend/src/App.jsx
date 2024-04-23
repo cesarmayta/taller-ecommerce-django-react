@@ -3,6 +3,16 @@ import Productos from './components/Productos';
 import Navbar from './components/Navbar';
 import Layout from './components/Layout';
 
+const styles= {
+  button : {
+      backgroundColor: '#0A283E',
+      color: '#fff',
+      padding: '15px 20px',
+      border: 'none',
+      borderRadius: '5px',
+      cursor: 'pointer',
+  }
+}
 
 class App extends Component {
   constructor(props) {
@@ -10,19 +20,19 @@ class App extends Component {
     this.state = {
       productos: [
         {
-          "codigo": 1,
+          "id": 1,
           "nombre": "Iphone 12",
           "precio": 7000,
           "imagen":"https://res.cloudinary.com/dd9ad40qm/image/upload/v1632882187/ukhwjwz3t25qlasowx83.jpg"
         },
         {
-          "codigo": 2,
+          "id": 2,
           "nombre": "Xiomi Redmi 11",
           "precio": 1500,
           "imagen":"https://res.cloudinary.com/dd9ad40qm/image/upload/v1632882062/cdp4mldk7pzi3wpbrieh.jpg"
         },
         {
-          "codigo": 3,
+          "id": 3,
           "nombre": "Samsung Galaxy Z flip 3",
           "precio": 3000,
           "imagen":"https://res.cloudinary.com/dd9ad40qm/image/upload/v1667360174/18268213_1_pct9me.jpg"
@@ -68,7 +78,7 @@ class App extends Component {
         esCarroVisible={esCarroVisible} 
         mostrarCarro={this.mostrarCarro}/>
         <Layout>
-        <h1>Productos</h1>
+        <h1>Productos : <button style={styles.button}>Consultar</button></h1>
           <Productos
             agregarAlCarro={this.agregarAlCarro}
             productos={this.state.productos}
